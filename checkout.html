@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — Clean Edits</title>
+<meta name="description" content="Secure checkout at Clean Edits.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-mark">Clean<span>Edits</span><div class="loader-bar"></div></div></div>
+
+<header class="site-header">
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Clean<span>Edits</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="shop.html" class="nav-link">Shop</a></li>
+        <li><a href="men.html" class="nav-link">Men</a></li>
+        <li><a href="women.html" class="nav-link">Women</a></li>
+        <li><a href="shoes.html" class="nav-link">Shoes</a></li>
+        <li><a href="accessories.html" class="nav-link">Accessories</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg>
+          <span class="badge-count" id="wishlistCount">0</span>
+        </a>
+        <a href="cart.html" class="icon-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="badge-count" id="cartCount">0</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="page-wrap">
+  <div class="breadcrumb container"><a href="index.html">Home</a> / <a href="cart.html">Cart</a> / <span>Checkout</span></div>
+
+  <section class="section-tight">
+    <div class="container">
+      <h1 class="section-title" style="margin-bottom:36px">Checkout</h1>
+
+      <form id="checkoutForm" class="checkout-layout">
+        <div>
+          <div class="checkout-section reveal-left">
+            <h3><span class="checkout-step-num">1</span> Contact &amp; Shipping</h3>
+            <div class="form-row-2">
+              <div class="form-field"><label for="ckFirstName">First Name</label><input type="text" id="ckFirstName" required></div>
+              <div class="form-field"><label for="ckLastName">Last Name</label><input type="text" id="ckLastName" required></div>
+            </div>
+            <div class="form-field"><label for="ckEmail">Email Address</label><input type="email" id="ckEmail" required></div>
+            <div class="form-field"><label for="ckAddress">Street Address</label><input type="text" id="ckAddress" required></div>
+            <div class="form-row-2">
+              <div class="form-field"><label for="ckCity">City</label><input type="text" id="ckCity" required></div>
+              <div class="form-field"><label for="ckPostal">Postal Code</label><input type="text" id="ckPostal" required></div>
+            </div>
+            <div class="form-field"><label for="ckPhone">Phone Number</label><input type="tel" id="ckPhone" required></div>
+          </div>
+
+          <div class="checkout-section reveal-left">
+            <h3><span class="checkout-step-num">2</span> Payment Method</h3>
+            <div class="payment-options">
+              <label class="payment-option active">
+                <input type="radio" name="payment" checked> Cash on Delivery
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment"> Credit / Debit Card
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment"> Bank Transfer
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="summary-card reveal-right">
+            <h3 style="margin-bottom:16px">Order Summary</h3>
+            <div class="checkout-summary-items" id="checkoutItems"></div>
+            <div class="summary-row"><span>Subtotal</span><span id="checkoutSubtotal">$0.00</span></div>
+            <div class="summary-row"><span>Shipping</span><span id="checkoutShipping">$0.00</span></div>
+            <div class="summary-row"><span>Estimated Tax</span><span id="checkoutTax">$0.00</span></div>
+            <div class="summary-row total"><span>Total</span><span id="checkoutTotal">$0.00</span></div>
+            <button type="submit" class="btn btn-primary btn-block" style="margin-top:20px">Place Order</button>
+          </div>
+        </div>
+      </form>
+
+      <div id="orderSuccess" class="empty-state hidden-el">
+        <div class="icon-circle-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Order placed successfully</h3>
+        <p>Thank you for shopping with Clean Edits — a confirmation has been recorded for your order.</p>
+        <a href="shop.html" class="btn btn-primary">Continue Shopping</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-bottom">
+    <p>&copy; <span id="year"></span> Clean Edits. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="login.html">Sign In</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

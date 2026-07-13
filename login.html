@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — Clean Edits</title>
+<meta name="description" content="Sign in to your Clean Edits account.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-mark">Clean<span>Edits</span><div class="loader-bar"></div></div></div>
+
+<div class="auth-wrap">
+  <div class="auth-visual reveal-left">
+    <img src="images/about-story.jpg" alt="Clean Edits">
+    <div class="auth-visual-text">
+      <h2>Welcome back.</h2>
+      <p>Sign in to track orders, manage your wishlist, and check out faster.</p>
+    </div>
+  </div>
+  <div class="auth-form-wrap">
+    <div class="auth-form fade-in-up">
+      <a href="index.html" class="nav-logo">Clean<span>Edits</span></a>
+      <h1>Sign In</h1>
+      <p>Welcome back — enter your details below.</p>
+
+      <form id="loginForm">
+        <div class="form-field">
+          <label for="loginEmail">Email Address</label>
+          <input type="email" id="loginEmail" required>
+        </div>
+        <div class="form-field">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" required>
+        </div>
+        <div class="form-meta-row">
+          <label class="checkbox-row"><input type="checkbox"> Remember me</label>
+          <a href="#" class="link-accent">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+      </form>
+
+      <div class="auth-divider">or continue with</div>
+      <div class="social-auth">
+        <button type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.2c0-.8-.1-1.5-.2-2.2H12v4.2h5.9a5 5 0 0 1-2.2 3.3v2.7h3.6c2.1-2 3.2-4.8 3.2-8Z"/><path fill="#34A853" d="M12 23c3 0 5.4-1 7.3-2.7l-3.6-2.7c-1 .7-2.2 1.1-3.7 1.1-2.9 0-5.3-1.9-6.2-4.5H2.1v2.8A11 11 0 0 0 12 23Z"/><path fill="#FBBC05" d="M5.8 14.2a6.6 6.6 0 0 1 0-4.4V7H2.1a11 11 0 0 0 0 9.9l3.7-2.7Z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .5 4.2 1.6l3.1-3.1C17.4 2 15 1 12 1a11 11 0 0 0-9.9 6l3.7 2.8c.9-2.6 3.3-4.4 6.2-4.4Z"/></svg>
+          Google
+        </button>
+        <button type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#000035"><path d="M17.5 12.3c0-2 1.6-2.9 1.7-3-1-1.4-2.5-1.6-3-1.6-1.3-.1-2.5.8-3.2.8-.7 0-1.7-.7-2.8-.7-1.4 0-2.8.8-3.5 2.1-1.5 2.6-.4 6.5 1.1 8.6.7 1 1.6 2.2 2.8 2.1 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 2-1 2.7-2 .9-1.2 1.2-2.4 1.2-2.5-.1 0-2.3-.9-2.3-3.5-.1-1.1 1-1.8 1.5-2.3ZM15.2 5.9c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.6-1 1.6-.9 2.6.9.1 1.9-.5 2.6-1.2Z"/></svg>
+          Apple
+        </button>
+      </div>
+
+      <p class="auth-switch">Don't have an account? <a href="register.html" class="link-accent">Create one</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

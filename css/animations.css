@@ -1,0 +1,106 @@
+/* =========================================================
+   Clean Edits — Animations
+   Scroll reveals are toggled via a `.in-view` class added by
+   js/animations.js using an IntersectionObserver.
+   ========================================================= */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+@keyframes floatYSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(14px); }
+}
+
+/* Entrance animations that run immediately (hero, loaders) */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease both;
+}
+.slide-up-in {
+  animation: fadeInUp 0.9s ease both;
+}
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.45s; }
+
+/* Scroll-triggered reveals — start hidden, animate in-view */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-left.in-view { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-right.in-view { opacity: 1; transform: translateX(0); }
+
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-zoom.in-view { opacity: 1; transform: scale(1); }
+
+.reveal-stagger .stagger-item {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-stagger.in-view .stagger-item { opacity: 1; transform: translateY(0); }
+.reveal-stagger.in-view .stagger-item:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.in-view .stagger-item:nth-child(2) { transition-delay: 0.12s; }
+.reveal-stagger.in-view .stagger-item:nth-child(3) { transition-delay: 0.19s; }
+.reveal-stagger.in-view .stagger-item:nth-child(4) { transition-delay: 0.26s; }
+.reveal-stagger.in-view .stagger-item:nth-child(5) { transition-delay: 0.33s; }
+.reveal-stagger.in-view .stagger-item:nth-child(6) { transition-delay: 0.4s; }
+.reveal-stagger.in-view .stagger-item:nth-child(n+7) { transition-delay: 0.46s; }
+
+/* Ambient floating decorative shapes (used on 404 page) */
+.floating { animation: floatY 7s ease-in-out infinite; }
+.floating-slow { animation: floatYSlow 9s ease-in-out infinite; }
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal, .reveal-left, .reveal-right, .reveal-zoom, .reveal-stagger .stagger-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop All — Clean Edits</title>
+<meta name="description" content="Shop the full Clean Edits collection — men's and women's western clothing, shoes and accessories.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-mark">Clean<span>Edits</span><div class="loader-bar"></div></div></div>
+
+<header class="site-header">
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Clean<span>Edits</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="shop.html" class="nav-link">Shop</a></li>
+        <li><a href="men.html" class="nav-link">Men</a></li>
+        <li><a href="women.html" class="nav-link">Women</a></li>
+        <li><a href="shoes.html" class="nav-link">Shoes</a></li>
+        <li><a href="accessories.html" class="nav-link">Accessories</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg>
+          <span class="badge-count" id="wishlistCount">0</span>
+        </a>
+        <a href="login.html" class="icon-btn" aria-label="Account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a6 6 0 0 1 12 0v1"/></svg>
+        </a>
+        <a href="cart.html" class="icon-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="badge-count" id="cartCount">0</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="search-panel" id="searchPanel">
+      <div class="nav-container">
+        <input type="text" id="navSearchInput" placeholder="Search for products...">
+        <button class="btn btn-primary btn-sm" id="navSearchBtn">Search</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="page-wrap">
+
+  <section class="shop-hero">
+    <div class="container">
+      <span class="eyebrow">The Full Edit</span>
+      <h1>Shop All</h1>
+      <p>Men's, women's, shoes and accessories — <span id="resultCount">0</span> pieces</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="shop-toolbar">
+        <div class="search-box">
+          <input type="text" id="shopSearch" placeholder="Search products...">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+        <div class="toolbar-controls">
+          <select class="select-control" id="shopSort">
+            <option value="featured">Sort: Featured</option>
+            <option value="newest">Newest</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="shop-layout">
+        <aside class="filters-panel" id="filtersPanel">
+          <div class="filter-group">
+            <h4>Category</h4>
+            <label class="filter-option"><input type="checkbox" data-cat-filter="men"> Men</label>
+            <label class="filter-option"><input type="checkbox" data-cat-filter="women"> Women</label>
+            <label class="filter-option"><input type="checkbox" data-cat-filter="shoes"> Shoes</label>
+            <label class="filter-option"><input type="checkbox" data-cat-filter="accessories"> Accessories</label>
+          </div>
+          <div class="filter-group">
+            <h4>Max Price</h4>
+            <div class="range-row"><span>$0</span><span id="priceOutput">$300</span></div>
+            <input type="range" id="priceRange" min="0" max="300" step="10" value="300">
+          </div>
+          <button class="btn btn-outline btn-block btn-sm" id="clearFilters">Clear Filters</button>
+        </aside>
+
+        <div>
+          <div class="product-grid" id="shopGrid"></div>
+          <div class="results-empty hidden-el" id="resultsEmpty">
+            <h3>No products match your filters</h3>
+            <p>Try adjusting your search or clearing filters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-top">
+    <div class="footer-col footer-brand">
+      <a href="index.html" class="nav-logo">Clean<span>Edits</span></a>
+      <p>Contemporary western clothing, shoes and accessories for men and women — designed for a quieter kind of confidence.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2-2 3c1.4 8.4-6 13.6-13 10.5A9 9 0 0 0 3 20c9 4 17-2 17-11 1-1 2-3 2-5Z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="shop.html">Shop All</a></li>
+        <li><a href="wishlist.html">Wishlist</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="men.html">Men</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="shoes.html">Shoes</a></li>
+        <li><a href="accessories.html">Accessories</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <address>Street 1, 5th Road, Bangsar Plaza Commercial Market Rd, Block B Satellite Town, Rawalpindi, 46300, Pakistan</address>
+      <p><a href="tel:03229274852">0322 9274852</a></p>
+      <p style="margin-top:10px">★ 4.7 average rating</p>
+    </div>
+    <div class="footer-col footer-map">
+      <h4>Find Us</h4>
+      <iframe class="footer-map-embed" loading="lazy" src="https://maps.google.com/maps?q=Street%201%2C%205th%20Road%2C%20Bangsar%20Plaza%20Commercial%20Market%20Rd%2C%20Block%20B%20Satellite%20Town%2C%20Rawalpindi%2C%2046300%2C%20Pakistan&output=embed" title="Clean Edits location"></iframe>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; <span id="year"></span> Clean Edits. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="login.html">Sign In</a>
+      <a href="register.html">Create Account</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/shop.js"></script>
+<script src="js/animations.js"></script>
+<script>initShopPage(null);</script>
+</body>
+</html>

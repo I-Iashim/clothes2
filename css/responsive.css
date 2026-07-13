@@ -106,9 +106,7 @@
   .nav-logo { font-size: 15px; }
   .hero-title { font-size: 32px; }
   .hero-sub { font-size: 15px; }
-   .icon-btn{
-      padding = 0;
-      width = 25px;
+   .icon-btn{ padding = 0;width = 25px;
    }
   .category-grid, .product-grid, .related-scroll, .wishlist-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .insta-grid { grid-template-columns: repeat(2, 1fr); }
